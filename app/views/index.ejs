@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title><%= title %></title>
+    </head>
+
+    <style>
+            .rightdiv{
+            transform:  translate(20%,20%)
+            }
+    </style>
+
+    <body>
+       
+        <h1>My Ten Animals</h1>
+
+        <img src="img/logo.png" alt="Logo"> 
+        <h1><%= title %></h1>
+
+        <div>
+				
+                <select class="leftdiv" id= box onchange="getAnimalDescription();"></select>
+                
+          
+                <ul id = "description" class = "rightdiv"> 
+                  <li id="a"></li>
+                  <li id="b"></li>
+                  <li id="c"></li>
+                </ul>
+
+          </div>
+          <script src="ExternalJSCodeForWebsite.js"></script>	
+    </body>
+
+</html>
