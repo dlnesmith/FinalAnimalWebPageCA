@@ -1,4 +1,4 @@
 module.exports = {
-    db: 'mongodb://localhost/posts',
+    db: 'mongodb://localhost/dominic',
     sessionSecret: 'developmentSessionSecret'
     };

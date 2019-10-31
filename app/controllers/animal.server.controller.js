@@ -13,11 +13,16 @@ exports.create = function(req, res, next) {
 exports.read = function(req, res) {
     res.json(req.animal);
     };
-exports.list = function(req, res, next) {
-    Animal.find({}, function(err, animal) {
-    if (err) {
+exports.list = function(req, res, next) 
+{
+    Animal.find({}, function(err, animal) 
+    {
+    if (err) 
+    {
     return next(err);
-    } else {
+    } 
+    else 
+    {
     console.log(animal);
     res.json(animal);
     }
