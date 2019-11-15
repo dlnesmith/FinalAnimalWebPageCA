@@ -1,6 +1,5 @@
 var animalList = require('mongoose').model('Animal');
 
-
 exports.render = function(req, res) 
 {
     if (req.session.lastVisit) 
@@ -8,24 +7,19 @@ exports.render = function(req, res)
         console.log(req.session.lastVisit);
         }
     req.session.lastVisit = new Date();
-    var eachAnimal = animalList.find({}, function(err, animal) 
+    animalList.find({}, function(err, animal) 
         {
         if (err) 
             {
-            return next(err);
+            console.log(err);
             } 
         else 
             {
-            console.log(animal)
-            return animal;
+            console.log(animal);
+            res.render('index', {title: 'Hello World', allAnimals: animal});
             }
         }
         )
-    res.render('index', 
-        {
-        title: 'Hello World',
-        allAnimals: eachAnimal
-        }
-    );
+    
 };
     
