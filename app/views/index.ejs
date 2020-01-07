@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <title><%=title%></title>
     </head>
 
-    <style>
-            .rightdiv{
-            transform:  translate(20%,20%)
-            }
-    </style>
-
+    <link rel="stylesheet" href="css/animalTable.css">
+    
     <body>
-       
         <h1>My Ten Animals</h1>
-
         <h1><%=title%></h1>
 
-        <script>  var pullThisAnimalArray = <%- JSON.stringify(allAnimals) %>; </script>  
+        <script>  const pullThisAnimalArray = <%- JSON.stringify(allAnimals) %>; </script>  
 
         <div>
-                
-                <select class="leftdiv" id ="box" onchange="getAnimalDescription();">
-
-                </select>
+                <select class="leftdiv" id ="box" onchange="getAnimalDescription();"> </select>
 
                 <ul id = "description" class = "rightdiv"> 
                   <li id="a"></li>
                   <li id="b"></li>
                   <li id="c"></li>
                 </ul>
-
           </div>
-          <script src="js/animalSelect.js"></script>
-          
-          	
-    </body>
 
+          <div>
+                <table class="leftdiv" id = "table">
+                        <tr>  <td>Animals</td> <td>Habitat</td> <td>Group</td> <td>Noise</td> </tr>
+                        <!----<tr>  <td>animal 1</td>  </tr>
+                        <tr>  <td>animal 2</td>  </tr>
+                        <tr>  <td>animal 3</td>  </tr> -->
+                </table> 
+          </div>
+
+          <div>
+                <form class="leftdiv" id="form">
+                    Animal Name: <input type="text" id ="nameForm" name="name"> <br><br>
+                    Animal Habitat: <input type="text" id="habitatForm" name="habitat"> <br><br>
+                    Animal Noise: <input type="text" id="noiseForm" name="noise"> <br><br>
+
+                    <select class="leftdiv" id ="optionBox">  </select><br><br>
+
+                    <input type="submit" value="Submit" id ="formSubmit" onclick="addAnimal()">
+                    <input type="submit" value="Edit" id ="formEdit" onclick="editAnimal()">
+                    <input type="submit" value="Delete" id ="formDelete" onclick="deleteAnimal()">
+                </form>
+          </div>
+
+          <script src="js/animalTable.js"></script>	
+          <script src="js/animalSelect.js"></script>
+          <script src="js/groupSelect.js"></script>
+          <script src="js/addButton.js"></script>		
+    </body>
 </html>

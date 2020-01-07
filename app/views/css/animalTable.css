@@ -1,0 +1,9 @@
+.rightdiv{
+    transform:  translate(20%,20%)
+    }
+
+    table, th, td{
+    border: 1px solid violet;
+    background-color: lightblue;
+    color: darkorange;
+    }

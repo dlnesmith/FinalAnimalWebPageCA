@@ -1,4 +1,4 @@
-var animal = require('../../app/controllers/animal.server.controller');
+const animal = require('../../app/controllers/animal.server.controller');
 module.exports = function(app) {
 app.route('/animal')
 .post(animal.create)

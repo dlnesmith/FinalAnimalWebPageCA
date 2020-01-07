@@ -1,12 +1,13 @@
-var config = require('./config'),
+const config = require('./config'),
 express = require('express'),
 morgan = require('morgan'),
 compress = require('compression'),
 bodyParser = require('body-parser'),
 methodOverride = require('method-override'),
 session = require('express-session');
+
 module.exports = function() {
-var app = express();
+const app = express();
 if (process.env.NODE_ENV === 'development') {
 app.use(morgan('dev'));
 } else if (process.env.NODE_ENV === 'production') {
@@ -22,6 +23,7 @@ saveUninitialized: true,
 resave: true,
 secret: config.sessionSecret
 }));
+
 app.set('views', './app/views');
 app.set('view engine', 'ejs');
 require('../app/routes/index.server.routes.js')(app);
